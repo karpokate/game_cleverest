@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15a6dc1d-5364-4f3a-ac4b-32aea908a247" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/credentials.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/telegram_bot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/cleverest.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
@@ -90,6 +94,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="691" y="350" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609079762714">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="691" y="350" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1609079762714" />
     <state width="1659" height="232" key="GridCell.Tab.0.bottom" timestamp="1608897775159">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

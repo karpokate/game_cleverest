@@ -1,0 +1,55 @@
+// my cleverest game proto
+syntax = "proto3";
+
+package  cleverest;
+
+service Cleverest {
+    rpc GetAllQuestions (LoadQuestionsList) returns (ReturnQuestionsList);
+    rpc AskQuestion (QuestionRequest) returns (QuestionResponse)
+    rpc CheckUserAnswer (SendUserAnswers) returns (UserResults)
+    rpc CheckUserRanking (LoadUserRanking) returns (ReturnUserRanking)
+}
+
+
+// Questions
+message QuestionRequest {}
+
+message QuestionResponse {
+    string question = 1;
+    string answer = 2;
+}
+
+message LoadQuestionsList {
+}
+
+message ReturnQuestionsList {
+    repeated Questions result = 1;
+}
+
+message Questions {
+    string Question = 2;
+    string Correct = 3;
+    repeated string Answers = 4;
+}
+
+// Answers
+message SendUserAnswers {
+    repeated string answers = 1;
+    string user = 2;
+}
+
+message UserResults {
+    repeated string result = 1;
+    repeated string answers = 2;
+    string percentage = 3;
+}
+
+// Rankings
+message LoadUserRanking {
+    string user = 1;
+}
+
+message ReturnUserRanking {
+    string score = 1;
+    string scoreOverall = 2;
+}
