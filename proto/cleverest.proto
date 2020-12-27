@@ -5,9 +5,9 @@ package  cleverest;
 
 service Cleverest {
     rpc GetAllQuestions (LoadQuestionsList) returns (ReturnQuestionsList);
-    rpc AskQuestion (QuestionRequest) returns (QuestionResponse)
-    rpc CheckUserAnswer (SendUserAnswers) returns (UserResults)
-    rpc CheckUserRanking (LoadUserRanking) returns (ReturnUserRanking)
+    rpc AskQuestion (QuestionRequest) returns (QuestionResponse);
+    rpc CheckUserAnswer (SendUserAnswers) returns (UserResults);
+    rpc CheckUserRanking (LoadUserRanking) returns (ReturnUserRanking);
 }
 
 
