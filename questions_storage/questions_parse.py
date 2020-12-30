@@ -31,7 +31,6 @@ def main():
                          'correct_answer']  # по дефолту последний ответ в списке - правильный
             single_question = data[i]
             answers = single_question[1].split('\n\n\t\t\t\t\t\t\t\t')[1].split('Ответы для викторин: ')[1].split(',')
-            answers.append(single_question[2])
             single_dict = {col_names[0]:single_question[0],
                            col_names[1]: single_question[1].split('\n\n\t\t\t\t\t\t\t\t')[0],
                            col_names[2]:answers,
@@ -41,9 +40,6 @@ def main():
     print(result_dict)
     with open('questions_bank.json', 'w') as fp:
         json.dump(result_dict, fp)
-
-
-
 
 
 
