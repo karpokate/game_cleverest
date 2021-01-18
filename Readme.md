@@ -10,10 +10,12 @@ https://baza-otvetov.ru/categories/view/1/2550 \
 Готовность  - [X] ГОТОВО
 
 ## Второй этап: реализация серверной части 
-grcp
-rabbit mq (message broker) 
-message listener 
-database - postgressql 
+grcp \
+proto \
+``python -m grpc_tools.protoc --proto_path=. ./cleverest.proto --python_out=. --grpc_python_out=.`` \
+rabbit mq (message broker)  \
+message listener \
+database - postgressql  
 
 ## Третий этап: реализация клиентской части 
 Flask, telegram api.

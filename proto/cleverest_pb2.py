@@ -19,15 +19,55 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0f\x63leverest.proto\x12\tcleverest\"\x11\n\x0fQuestionRequest\"4\n\x10QuestionResponse\x12\x10\n\x08question\x18\x01 \x01(\t\x12\x0e\n\x06\x61nswer\x18\x02 \x01(\t\"\x13\n\x11LoadQuestionsList\";\n\x13ReturnQuestionsList\x12$\n\x06result\x18\x01 \x03(\x0b\x32\x14.cleverest.Questions\"?\n\tQuestions\x12\x10\n\x08Question\x18\x02 \x01(\t\x12\x0f\n\x07\x43orrect\x18\x03 \x01(\t\x12\x0f\n\x07\x41nswers\x18\x04 \x03(\t\"0\n\x0fSendUserAnswers\x12\x0f\n\x07\x61nswers\x18\x01 \x03(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\"B\n\x0bUserResults\x12\x0e\n\x06result\x18\x01 \x03(\t\x12\x0f\n\x07\x61nswers\x18\x02 \x03(\t\x12\x12\n\npercentage\x18\x03 \x01(\t\"\x1f\n\x0fLoadUserRanking\x12\x0c\n\x04user\x18\x01 \x01(\t\"8\n\x11ReturnUserRanking\x12\r\n\x05score\x18\x01 \x01(\t\x12\x14\n\x0cscoreOverall\x18\x02 \x01(\t2\xb9\x02\n\tCleverest\x12O\n\x0fGetAllQuestions\x12\x1c.cleverest.LoadQuestionsList\x1a\x1e.cleverest.ReturnQuestionsList\x12\x46\n\x0b\x41skQuestion\x12\x1a.cleverest.QuestionRequest\x1a\x1b.cleverest.QuestionResponse\x12\x45\n\x0f\x43heckUserAnswer\x12\x1a.cleverest.SendUserAnswers\x1a\x16.cleverest.UserResults\x12L\n\x10\x43heckUserRanking\x12\x1a.cleverest.LoadUserRanking\x1a\x1c.cleverest.ReturnUserRankingb\x06proto3'
+  serialized_pb=b'\n\x0f\x63leverest.proto\x12\tcleverest\"\x07\n\x05\x45mpty\"%\n\x11\x43onnectionRequest\x12\x10\n\x08username\x18\x01 \x01(\t\".\n\x06Status\x12\r\n\x05is_ok\x18\x01 \x01(\x08\x12\x15\n\rerror_message\x18\x02 \x01(\t\"K\n\x12\x43onnectionResponse\x12\x12\n\nuser_token\x18\x01 \x01(\t\x12!\n\x06status\x18\x02 \x01(\x0b\x32\x11.cleverest.Status\"M\n\x10QuestionResponse\x12\x17\n\x0fnumber_question\x18\x01 \x01(\x05\x12\x10\n\x08question\x18\x02 \x01(\t\x12\x0e\n\x06\x41nswer\x18\x03 \x03(\t\"/\n\x0fSendUserAnswers\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\"B\n\x0bUserResults\x12\x0e\n\x06result\x18\x01 \x03(\t\x12\x0f\n\x07\x61nswers\x18\x02 \x03(\t\x12\x12\n\npercentage\x18\x03 \x01(\t\"\x1f\n\x0fLoadUserRanking\x12\x0c\n\x04user\x18\x01 \x01(\t\"8\n\x11ReturnUserRanking\x12\r\n\x05score\x18\x01 \x01(\t\x12\x14\n\x0cscoreOverall\x18\x02 \x01(\t\"\xc5\x01\n\x06\x41\x63tion\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x31\n\x0b\x61\x63tion_type\x18\x02 \x01(\x0e\x32\x1c.cleverest.Action.ActionType\x12\x0f\n\x07payload\x18\x03 \x01(\t\"e\n\nActionType\x12\x0b\n\x07\x43ONNECT\x10\x00\x12\x0e\n\nDISCONNECT\x10\x01\x12\x13\n\x0f\x41NSWER_QUESTION\x10\x02\x12\x10\n\x0c\x43HECK_ANSWER\x10\x03\x12\x13\n\x0fGET_USER_RATING\x10\x04\x32\xef\x02\n\tCleverest\x12I\n\nConnection\x12\x1c.cleverest.ConnectionRequest\x1a\x1d.cleverest.ConnectionResponse\x12\x46\n\x0b\x41skQuestion\x12\x1b.cleverest.QuestionResponse\x1a\x1a.cleverest.SendUserAnswers\x12\x45\n\x0f\x43heckUserAnswer\x12\x1a.cleverest.SendUserAnswers\x1a\x16.cleverest.UserResults\x12L\n\x10\x43heckUserRanking\x12\x1a.cleverest.LoadUserRanking\x1a\x1c.cleverest.ReturnUserRanking\x12:\n\x0fget_game_stream\x12\x10.cleverest.Empty\x1a\x11.cleverest.Action\"\x00\x30\x01\x62\x06proto3'
 )
 
 
 
+_ACTION_ACTIONTYPE = _descriptor.EnumDescriptor(
+  name='ActionType',
+  full_name='cleverest.Action.ActionType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CONNECT', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DISCONNECT', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ANSWER_QUESTION', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CHECK_ANSWER', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GET_USER_RATING', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=587,
+  serialized_end=688,
+)
+_sym_db.RegisterEnumDescriptor(_ACTION_ACTIONTYPE)
 
-_QUESTIONREQUEST = _descriptor.Descriptor(
-  name='QuestionRequest',
-  full_name='cleverest.QuestionRequest',
+
+_EMPTY = _descriptor.Descriptor(
+  name='Empty',
+  full_name='cleverest.Empty',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -46,7 +86,117 @@ _QUESTIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=30,
-  serialized_end=47,
+  serialized_end=37,
+)
+
+
+_CONNECTIONREQUEST = _descriptor.Descriptor(
+  name='ConnectionRequest',
+  full_name='cleverest.ConnectionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='username', full_name='cleverest.ConnectionRequest.username', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=39,
+  serialized_end=76,
+)
+
+
+_STATUS = _descriptor.Descriptor(
+  name='Status',
+  full_name='cleverest.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='is_ok', full_name='cleverest.Status.is_ok', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error_message', full_name='cleverest.Status.error_message', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=78,
+  serialized_end=124,
+)
+
+
+_CONNECTIONRESPONSE = _descriptor.Descriptor(
+  name='ConnectionResponse',
+  full_name='cleverest.ConnectionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_token', full_name='cleverest.ConnectionResponse.user_token', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cleverest.ConnectionResponse.status', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=126,
+  serialized_end=201,
 )
 
 
@@ -59,72 +209,22 @@ _QUESTIONRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='question', full_name='cleverest.QuestionResponse.question', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='number_question', full_name='cleverest.QuestionResponse.number_question', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='answer', full_name='cleverest.QuestionResponse.answer', index=1,
+      name='question', full_name='cleverest.QuestionResponse.question', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=49,
-  serialized_end=101,
-)
-
-
-_LOADQUESTIONSLIST = _descriptor.Descriptor(
-  name='LoadQuestionsList',
-  full_name='cleverest.LoadQuestionsList',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=103,
-  serialized_end=122,
-)
-
-
-_RETURNQUESTIONSLIST = _descriptor.Descriptor(
-  name='ReturnQuestionsList',
-  full_name='cleverest.ReturnQuestionsList',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='result', full_name='cleverest.ReturnQuestionsList.result', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='Answer', full_name='cleverest.QuestionResponse.Answer', index=2,
+      number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -141,54 +241,8 @@ _RETURNQUESTIONSLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=124,
-  serialized_end=183,
-)
-
-
-_QUESTIONS = _descriptor.Descriptor(
-  name='Questions',
-  full_name='cleverest.Questions',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='Question', full_name='cleverest.Questions.Question', index=0,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='Correct', full_name='cleverest.Questions.Correct', index=1,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='Answers', full_name='cleverest.Questions.Answers', index=2,
-      number=4, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=185,
-  serialized_end=248,
+  serialized_start=203,
+  serialized_end=280,
 )
 
 
@@ -201,9 +255,9 @@ _SENDUSERANSWERS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='answers', full_name='cleverest.SendUserAnswers.answers', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='answer', full_name='cleverest.SendUserAnswers.answer', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -226,8 +280,8 @@ _SENDUSERANSWERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=250,
-  serialized_end=298,
+  serialized_start=282,
+  serialized_end=329,
 )
 
 
@@ -272,8 +326,8 @@ _USERRESULTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=300,
-  serialized_end=366,
+  serialized_start=331,
+  serialized_end=397,
 )
 
 
@@ -304,8 +358,8 @@ _LOADUSERRANKING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=399,
+  serialized_start=399,
+  serialized_end=430,
 )
 
 
@@ -343,28 +397,99 @@ _RETURNUSERRANKING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=401,
-  serialized_end=457,
+  serialized_start=432,
+  serialized_end=488,
 )
 
-_RETURNQUESTIONSLIST.fields_by_name['result'].message_type = _QUESTIONS
-DESCRIPTOR.message_types_by_name['QuestionRequest'] = _QUESTIONREQUEST
+
+_ACTION = _descriptor.Descriptor(
+  name='Action',
+  full_name='cleverest.Action',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='username', full_name='cleverest.Action.username', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='action_type', full_name='cleverest.Action.action_type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='payload', full_name='cleverest.Action.payload', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _ACTION_ACTIONTYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=491,
+  serialized_end=688,
+)
+
+_CONNECTIONRESPONSE.fields_by_name['status'].message_type = _STATUS
+_ACTION.fields_by_name['action_type'].enum_type = _ACTION_ACTIONTYPE
+_ACTION_ACTIONTYPE.containing_type = _ACTION
+DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
+DESCRIPTOR.message_types_by_name['ConnectionRequest'] = _CONNECTIONREQUEST
+DESCRIPTOR.message_types_by_name['Status'] = _STATUS
+DESCRIPTOR.message_types_by_name['ConnectionResponse'] = _CONNECTIONRESPONSE
 DESCRIPTOR.message_types_by_name['QuestionResponse'] = _QUESTIONRESPONSE
-DESCRIPTOR.message_types_by_name['LoadQuestionsList'] = _LOADQUESTIONSLIST
-DESCRIPTOR.message_types_by_name['ReturnQuestionsList'] = _RETURNQUESTIONSLIST
-DESCRIPTOR.message_types_by_name['Questions'] = _QUESTIONS
 DESCRIPTOR.message_types_by_name['SendUserAnswers'] = _SENDUSERANSWERS
 DESCRIPTOR.message_types_by_name['UserResults'] = _USERRESULTS
 DESCRIPTOR.message_types_by_name['LoadUserRanking'] = _LOADUSERRANKING
 DESCRIPTOR.message_types_by_name['ReturnUserRanking'] = _RETURNUSERRANKING
+DESCRIPTOR.message_types_by_name['Action'] = _ACTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-QuestionRequest = _reflection.GeneratedProtocolMessageType('QuestionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _QUESTIONREQUEST,
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), {
+  'DESCRIPTOR' : _EMPTY,
   '__module__' : 'cleverest_pb2'
-  # @@protoc_insertion_point(class_scope:cleverest.QuestionRequest)
+  # @@protoc_insertion_point(class_scope:cleverest.Empty)
   })
-_sym_db.RegisterMessage(QuestionRequest)
+_sym_db.RegisterMessage(Empty)
+
+ConnectionRequest = _reflection.GeneratedProtocolMessageType('ConnectionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTIONREQUEST,
+  '__module__' : 'cleverest_pb2'
+  # @@protoc_insertion_point(class_scope:cleverest.ConnectionRequest)
+  })
+_sym_db.RegisterMessage(ConnectionRequest)
+
+Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), {
+  'DESCRIPTOR' : _STATUS,
+  '__module__' : 'cleverest_pb2'
+  # @@protoc_insertion_point(class_scope:cleverest.Status)
+  })
+_sym_db.RegisterMessage(Status)
+
+ConnectionResponse = _reflection.GeneratedProtocolMessageType('ConnectionResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTIONRESPONSE,
+  '__module__' : 'cleverest_pb2'
+  # @@protoc_insertion_point(class_scope:cleverest.ConnectionResponse)
+  })
+_sym_db.RegisterMessage(ConnectionResponse)
 
 QuestionResponse = _reflection.GeneratedProtocolMessageType('QuestionResponse', (_message.Message,), {
   'DESCRIPTOR' : _QUESTIONRESPONSE,
@@ -372,27 +497,6 @@ QuestionResponse = _reflection.GeneratedProtocolMessageType('QuestionResponse', 
   # @@protoc_insertion_point(class_scope:cleverest.QuestionResponse)
   })
 _sym_db.RegisterMessage(QuestionResponse)
-
-LoadQuestionsList = _reflection.GeneratedProtocolMessageType('LoadQuestionsList', (_message.Message,), {
-  'DESCRIPTOR' : _LOADQUESTIONSLIST,
-  '__module__' : 'cleverest_pb2'
-  # @@protoc_insertion_point(class_scope:cleverest.LoadQuestionsList)
-  })
-_sym_db.RegisterMessage(LoadQuestionsList)
-
-ReturnQuestionsList = _reflection.GeneratedProtocolMessageType('ReturnQuestionsList', (_message.Message,), {
-  'DESCRIPTOR' : _RETURNQUESTIONSLIST,
-  '__module__' : 'cleverest_pb2'
-  # @@protoc_insertion_point(class_scope:cleverest.ReturnQuestionsList)
-  })
-_sym_db.RegisterMessage(ReturnQuestionsList)
-
-Questions = _reflection.GeneratedProtocolMessageType('Questions', (_message.Message,), {
-  'DESCRIPTOR' : _QUESTIONS,
-  '__module__' : 'cleverest_pb2'
-  # @@protoc_insertion_point(class_scope:cleverest.Questions)
-  })
-_sym_db.RegisterMessage(Questions)
 
 SendUserAnswers = _reflection.GeneratedProtocolMessageType('SendUserAnswers', (_message.Message,), {
   'DESCRIPTOR' : _SENDUSERANSWERS,
@@ -422,6 +526,13 @@ ReturnUserRanking = _reflection.GeneratedProtocolMessageType('ReturnUserRanking'
   })
 _sym_db.RegisterMessage(ReturnUserRanking)
 
+Action = _reflection.GeneratedProtocolMessageType('Action', (_message.Message,), {
+  'DESCRIPTOR' : _ACTION,
+  '__module__' : 'cleverest_pb2'
+  # @@protoc_insertion_point(class_scope:cleverest.Action)
+  })
+_sym_db.RegisterMessage(Action)
+
 
 
 _CLEVEREST = _descriptor.ServiceDescriptor(
@@ -431,16 +542,16 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=460,
-  serialized_end=773,
+  serialized_start=691,
+  serialized_end=1058,
   methods=[
   _descriptor.MethodDescriptor(
-    name='GetAllQuestions',
-    full_name='cleverest.Cleverest.GetAllQuestions',
+    name='Connection',
+    full_name='cleverest.Cleverest.Connection',
     index=0,
     containing_service=None,
-    input_type=_LOADQUESTIONSLIST,
-    output_type=_RETURNQUESTIONSLIST,
+    input_type=_CONNECTIONREQUEST,
+    output_type=_CONNECTIONRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -449,8 +560,8 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
     full_name='cleverest.Cleverest.AskQuestion',
     index=1,
     containing_service=None,
-    input_type=_QUESTIONREQUEST,
-    output_type=_QUESTIONRESPONSE,
+    input_type=_QUESTIONRESPONSE,
+    output_type=_SENDUSERANSWERS,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -471,6 +582,16 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LOADUSERRANKING,
     output_type=_RETURNUSERRANKING,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='get_game_stream',
+    full_name='cleverest.Cleverest.get_game_stream',
+    index=4,
+    containing_service=None,
+    input_type=_EMPTY,
+    output_type=_ACTION,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

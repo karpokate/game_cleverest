@@ -3,38 +3,45 @@ syntax = "proto3";
 
 package  cleverest;
 
+// игра - это чат в который нужно присоединиться и начнется игра
+
 service Cleverest {
-    rpc GetAllQuestions (LoadQuestionsList) returns (ReturnQuestionsList);
-    rpc AskQuestion (QuestionRequest) returns (QuestionResponse);
+    // Connect to game
+    rpc Connection (ConnectionRequest) returns (ConnectionResponse);
+    // user get question with answer => return answer
+    rpc AskQuestion (QuestionResponse) returns (SendUserAnswers);
+    // check answer
     rpc CheckUserAnswer (SendUserAnswers) returns (UserResults);
+    // load user rank
     rpc CheckUserRanking (LoadUserRanking) returns (ReturnUserRanking);
+    // game stream
+    rpc get_game_stream(Empty) returns (stream Action) {}
+}
+message Empty {}
+
+message ConnectionRequest {
+    string username = 1;
 }
 
+message Status {
+    bool is_ok = 1;
+    string error_message = 2;
+}
 
-// Questions
-message QuestionRequest {}
+message ConnectionResponse {
+    string user_token = 1;
+    Status status = 2;
+}
 
 message QuestionResponse {
-    string question = 1;
-    string answer = 2;
-}
-
-message LoadQuestionsList {
-}
-
-message ReturnQuestionsList {
-    repeated Questions result = 1;
-}
-
-message Questions {
-    string Question = 2;
-    string Correct = 3;
-    repeated string Answers = 4;
+    int32 number_question = 1;
+    string question = 2;
+    repeated string Answer = 3;
 }
 
 // Answers
 message SendUserAnswers {
-    repeated string answers = 1;
+    string answer = 1;
     string user = 2;
 }
 
@@ -52,4 +59,17 @@ message LoadUserRanking {
 message ReturnUserRanking {
     string score = 1;
     string scoreOverall = 2;
+}
+
+message Action {
+    enum ActionType {
+        CONNECT = 0;
+        DISCONNECT = 1;
+        ANSWER_QUESTION = 2;
+        CHECK_ANSWER = 3;
+        GET_USER_RATING = 4;
+    }
+    string username = 1;
+    ActionType action_type = 2;
+    string payload = 3;
 }

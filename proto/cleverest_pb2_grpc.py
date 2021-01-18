@@ -2,11 +2,13 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from proto import cleverest_pb2 as cleverest__pb2
+import cleverest_pb2 as cleverest__pb2
 
 
 class CleverestStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """игра - это чат в который нужно присоединиться и начнется игра
+
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -14,15 +16,15 @@ class CleverestStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetAllQuestions = channel.unary_unary(
-                '/cleverest.Cleverest/GetAllQuestions',
-                request_serializer=cleverest__pb2.LoadQuestionsList.SerializeToString,
-                response_deserializer=cleverest__pb2.ReturnQuestionsList.FromString,
+        self.Connection = channel.unary_unary(
+                '/cleverest.Cleverest/Connection',
+                request_serializer=cleverest__pb2.ConnectionRequest.SerializeToString,
+                response_deserializer=cleverest__pb2.ConnectionResponse.FromString,
                 )
         self.AskQuestion = channel.unary_unary(
                 '/cleverest.Cleverest/AskQuestion',
-                request_serializer=cleverest__pb2.QuestionRequest.SerializeToString,
-                response_deserializer=cleverest__pb2.QuestionResponse.FromString,
+                request_serializer=cleverest__pb2.QuestionResponse.SerializeToString,
+                response_deserializer=cleverest__pb2.SendUserAnswers.FromString,
                 )
         self.CheckUserAnswer = channel.unary_unary(
                 '/cleverest.Cleverest/CheckUserAnswer',
@@ -34,31 +36,49 @@ class CleverestStub(object):
                 request_serializer=cleverest__pb2.LoadUserRanking.SerializeToString,
                 response_deserializer=cleverest__pb2.ReturnUserRanking.FromString,
                 )
+        self.get_game_stream = channel.unary_stream(
+                '/cleverest.Cleverest/get_game_stream',
+                request_serializer=cleverest__pb2.Empty.SerializeToString,
+                response_deserializer=cleverest__pb2.Action.FromString,
+                )
 
 
 class CleverestServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """игра - это чат в который нужно присоединиться и начнется игра
 
-    def GetAllQuestions(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    """
+
+    def Connection(self, request, context):
+        """Connect to game
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AskQuestion(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """user get question with answer => return answer
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CheckUserAnswer(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """check answer
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CheckUserRanking(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """load user rank
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def get_game_stream(self, request, context):
+        """game stream
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -66,15 +86,15 @@ class CleverestServicer(object):
 
 def add_CleverestServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetAllQuestions': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAllQuestions,
-                    request_deserializer=cleverest__pb2.LoadQuestionsList.FromString,
-                    response_serializer=cleverest__pb2.ReturnQuestionsList.SerializeToString,
+            'Connection': grpc.unary_unary_rpc_method_handler(
+                    servicer.Connection,
+                    request_deserializer=cleverest__pb2.ConnectionRequest.FromString,
+                    response_serializer=cleverest__pb2.ConnectionResponse.SerializeToString,
             ),
             'AskQuestion': grpc.unary_unary_rpc_method_handler(
                     servicer.AskQuestion,
-                    request_deserializer=cleverest__pb2.QuestionRequest.FromString,
-                    response_serializer=cleverest__pb2.QuestionResponse.SerializeToString,
+                    request_deserializer=cleverest__pb2.QuestionResponse.FromString,
+                    response_serializer=cleverest__pb2.SendUserAnswers.SerializeToString,
             ),
             'CheckUserAnswer': grpc.unary_unary_rpc_method_handler(
                     servicer.CheckUserAnswer,
@@ -86,6 +106,11 @@ def add_CleverestServicer_to_server(servicer, server):
                     request_deserializer=cleverest__pb2.LoadUserRanking.FromString,
                     response_serializer=cleverest__pb2.ReturnUserRanking.SerializeToString,
             ),
+            'get_game_stream': grpc.unary_stream_rpc_method_handler(
+                    servicer.get_game_stream,
+                    request_deserializer=cleverest__pb2.Empty.FromString,
+                    response_serializer=cleverest__pb2.Action.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'cleverest.Cleverest', rpc_method_handlers)
@@ -94,10 +119,12 @@ def add_CleverestServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Cleverest(object):
-    """Missing associated documentation comment in .proto file."""
+    """игра - это чат в который нужно присоединиться и начнется игра
+
+    """
 
     @staticmethod
-    def GetAllQuestions(request,
+    def Connection(request,
             target,
             options=(),
             channel_credentials=None,
@@ -107,9 +134,9 @@ class Cleverest(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cleverest.Cleverest/GetAllQuestions',
-            cleverest__pb2.LoadQuestionsList.SerializeToString,
-            cleverest__pb2.ReturnQuestionsList.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cleverest.Cleverest/Connection',
+            cleverest__pb2.ConnectionRequest.SerializeToString,
+            cleverest__pb2.ConnectionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -125,8 +152,8 @@ class Cleverest(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cleverest.Cleverest/AskQuestion',
-            cleverest__pb2.QuestionRequest.SerializeToString,
-            cleverest__pb2.QuestionResponse.FromString,
+            cleverest__pb2.QuestionResponse.SerializeToString,
+            cleverest__pb2.SendUserAnswers.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -161,5 +188,22 @@ class Cleverest(object):
         return grpc.experimental.unary_unary(request, target, '/cleverest.Cleverest/CheckUserRanking',
             cleverest__pb2.LoadUserRanking.SerializeToString,
             cleverest__pb2.ReturnUserRanking.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def get_game_stream(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/cleverest.Cleverest/get_game_stream',
+            cleverest__pb2.Empty.SerializeToString,
+            cleverest__pb2.Action.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
