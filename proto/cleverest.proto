@@ -8,6 +8,8 @@ package  cleverest;
 service Cleverest {
     // Connect to game
     rpc Connection (ConnectionRequest) returns (ConnectionResponse);
+    // disconnect game
+    rpc disconnect(DisconnectionRequest) returns (Status) {}
     // user get question with answer => return answer
     rpc AskQuestion (QuestionResponse) returns (SendUserAnswers);
     // check answer
@@ -22,6 +24,9 @@ message Empty {}
 message ConnectionRequest {
     string username = 1;
 }
+message DisconnectionRequest {
+    string user_token = 1;
+}
 
 message Status {
     bool is_ok = 1;
@@ -34,31 +39,30 @@ message ConnectionResponse {
 }
 
 message QuestionResponse {
-    int32 number_question = 1;
+    string number_question = 1;
     string question = 2;
     repeated string Answer = 3;
 }
 
 // Answers
 message SendUserAnswers {
-    string answer = 1;
-    string user = 2;
+    string user_token = 1;
+    string answer = 2;
 }
 
 message UserResults {
-    repeated string result = 1;
-    repeated string answers = 2;
-    string percentage = 3;
+    string result_message = 1;
 }
 
 // Rankings
 message LoadUserRanking {
-    string user = 1;
+    //string user = 1;
+    string user_token=1;
 }
 
 message ReturnUserRanking {
     string score = 1;
-    string scoreOverall = 2;
+    //string scoreOverall = 2;
 }
 
 message Action {

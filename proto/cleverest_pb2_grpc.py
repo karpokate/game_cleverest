@@ -21,6 +21,11 @@ class CleverestStub(object):
                 request_serializer=cleverest__pb2.ConnectionRequest.SerializeToString,
                 response_deserializer=cleverest__pb2.ConnectionResponse.FromString,
                 )
+        self.disconnect = channel.unary_unary(
+                '/cleverest.Cleverest/disconnect',
+                request_serializer=cleverest__pb2.DisconnectionRequest.SerializeToString,
+                response_deserializer=cleverest__pb2.Status.FromString,
+                )
         self.AskQuestion = channel.unary_unary(
                 '/cleverest.Cleverest/AskQuestion',
                 request_serializer=cleverest__pb2.QuestionResponse.SerializeToString,
@@ -55,9 +60,15 @@ class CleverestServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AskQuestion(self, request, context):
+    def disconnect(self, request, context):
         """user get question with answer => return answer
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AskQuestion(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -90,6 +101,11 @@ def add_CleverestServicer_to_server(servicer, server):
                     servicer.Connection,
                     request_deserializer=cleverest__pb2.ConnectionRequest.FromString,
                     response_serializer=cleverest__pb2.ConnectionResponse.SerializeToString,
+            ),
+            'disconnect': grpc.unary_unary_rpc_method_handler(
+                    servicer.disconnect,
+                    request_deserializer=cleverest__pb2.DisconnectionRequest.FromString,
+                    response_serializer=cleverest__pb2.Status.SerializeToString,
             ),
             'AskQuestion': grpc.unary_unary_rpc_method_handler(
                     servicer.AskQuestion,
@@ -137,6 +153,23 @@ class Cleverest(object):
         return grpc.experimental.unary_unary(request, target, '/cleverest.Cleverest/Connection',
             cleverest__pb2.ConnectionRequest.SerializeToString,
             cleverest__pb2.ConnectionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def disconnect(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cleverest.Cleverest/disconnect',
+            cleverest__pb2.DisconnectionRequest.SerializeToString,
+            cleverest__pb2.Status.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

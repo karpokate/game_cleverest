@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0f\x63leverest.proto\x12\tcleverest\"\x07\n\x05\x45mpty\"%\n\x11\x43onnectionRequest\x12\x10\n\x08username\x18\x01 \x01(\t\".\n\x06Status\x12\r\n\x05is_ok\x18\x01 \x01(\x08\x12\x15\n\rerror_message\x18\x02 \x01(\t\"K\n\x12\x43onnectionResponse\x12\x12\n\nuser_token\x18\x01 \x01(\t\x12!\n\x06status\x18\x02 \x01(\x0b\x32\x11.cleverest.Status\"M\n\x10QuestionResponse\x12\x17\n\x0fnumber_question\x18\x01 \x01(\x05\x12\x10\n\x08question\x18\x02 \x01(\t\x12\x0e\n\x06\x41nswer\x18\x03 \x03(\t\"/\n\x0fSendUserAnswers\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\"B\n\x0bUserResults\x12\x0e\n\x06result\x18\x01 \x03(\t\x12\x0f\n\x07\x61nswers\x18\x02 \x03(\t\x12\x12\n\npercentage\x18\x03 \x01(\t\"\x1f\n\x0fLoadUserRanking\x12\x0c\n\x04user\x18\x01 \x01(\t\"8\n\x11ReturnUserRanking\x12\r\n\x05score\x18\x01 \x01(\t\x12\x14\n\x0cscoreOverall\x18\x02 \x01(\t\"\xc5\x01\n\x06\x41\x63tion\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x31\n\x0b\x61\x63tion_type\x18\x02 \x01(\x0e\x32\x1c.cleverest.Action.ActionType\x12\x0f\n\x07payload\x18\x03 \x01(\t\"e\n\nActionType\x12\x0b\n\x07\x43ONNECT\x10\x00\x12\x0e\n\nDISCONNECT\x10\x01\x12\x13\n\x0f\x41NSWER_QUESTION\x10\x02\x12\x10\n\x0c\x43HECK_ANSWER\x10\x03\x12\x13\n\x0fGET_USER_RATING\x10\x04\x32\xef\x02\n\tCleverest\x12I\n\nConnection\x12\x1c.cleverest.ConnectionRequest\x1a\x1d.cleverest.ConnectionResponse\x12\x46\n\x0b\x41skQuestion\x12\x1b.cleverest.QuestionResponse\x1a\x1a.cleverest.SendUserAnswers\x12\x45\n\x0f\x43heckUserAnswer\x12\x1a.cleverest.SendUserAnswers\x1a\x16.cleverest.UserResults\x12L\n\x10\x43heckUserRanking\x12\x1a.cleverest.LoadUserRanking\x1a\x1c.cleverest.ReturnUserRanking\x12:\n\x0fget_game_stream\x12\x10.cleverest.Empty\x1a\x11.cleverest.Action\"\x00\x30\x01\x62\x06proto3'
+  serialized_pb=b'\n\x0f\x63leverest.proto\x12\tcleverest\"\x07\n\x05\x45mpty\"%\n\x11\x43onnectionRequest\x12\x10\n\x08username\x18\x01 \x01(\t\"*\n\x14\x44isconnectionRequest\x12\x12\n\nuser_token\x18\x01 \x01(\t\".\n\x06Status\x12\r\n\x05is_ok\x18\x01 \x01(\x08\x12\x15\n\rerror_message\x18\x02 \x01(\t\"K\n\x12\x43onnectionResponse\x12\x12\n\nuser_token\x18\x01 \x01(\t\x12!\n\x06status\x18\x02 \x01(\x0b\x32\x11.cleverest.Status\"M\n\x10QuestionResponse\x12\x17\n\x0fnumber_question\x18\x01 \x01(\x05\x12\x10\n\x08question\x18\x02 \x01(\t\x12\x0e\n\x06\x41nswer\x18\x03 \x03(\t\"5\n\x0fSendUserAnswers\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t\x12\x12\n\nuser_token\x18\x02 \x01(\t\"B\n\x0bUserResults\x12\x0e\n\x06result\x18\x01 \x03(\t\x12\x0f\n\x07\x61nswers\x18\x02 \x03(\t\x12\x12\n\npercentage\x18\x03 \x01(\t\"\x1f\n\x0fLoadUserRanking\x12\x0c\n\x04user\x18\x01 \x01(\t\"8\n\x11ReturnUserRanking\x12\r\n\x05score\x18\x01 \x01(\t\x12\x14\n\x0cscoreOverall\x18\x02 \x01(\t\"\xc5\x01\n\x06\x41\x63tion\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x31\n\x0b\x61\x63tion_type\x18\x02 \x01(\x0e\x32\x1c.cleverest.Action.ActionType\x12\x0f\n\x07payload\x18\x03 \x01(\t\"e\n\nActionType\x12\x0b\n\x07\x43ONNECT\x10\x00\x12\x0e\n\nDISCONNECT\x10\x01\x12\x13\n\x0f\x41NSWER_QUESTION\x10\x02\x12\x10\n\x0c\x43HECK_ANSWER\x10\x03\x12\x13\n\x0fGET_USER_RATING\x10\x04\x32\xb3\x03\n\tCleverest\x12I\n\nConnection\x12\x1c.cleverest.ConnectionRequest\x1a\x1d.cleverest.ConnectionResponse\x12\x42\n\ndisconnect\x12\x1f.cleverest.DisconnectionRequest\x1a\x11.cleverest.Status\"\x00\x12\x46\n\x0b\x41skQuestion\x12\x1b.cleverest.QuestionResponse\x1a\x1a.cleverest.SendUserAnswers\x12\x45\n\x0f\x43heckUserAnswer\x12\x1a.cleverest.SendUserAnswers\x1a\x16.cleverest.UserResults\x12L\n\x10\x43heckUserRanking\x12\x1a.cleverest.LoadUserRanking\x1a\x1c.cleverest.ReturnUserRanking\x12:\n\x0fget_game_stream\x12\x10.cleverest.Empty\x1a\x11.cleverest.Action\"\x00\x30\x01\x62\x06proto3'
 )
 
 
@@ -59,8 +59,8 @@ _ACTION_ACTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=587,
-  serialized_end=688,
+  serialized_start=637,
+  serialized_end=738,
 )
 _sym_db.RegisterEnumDescriptor(_ACTION_ACTIONTYPE)
 
@@ -122,6 +122,38 @@ _CONNECTIONREQUEST = _descriptor.Descriptor(
 )
 
 
+_DISCONNECTIONREQUEST = _descriptor.Descriptor(
+  name='DisconnectionRequest',
+  full_name='cleverest.DisconnectionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_token', full_name='cleverest.DisconnectionRequest.user_token', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=78,
+  serialized_end=120,
+)
+
+
 _STATUS = _descriptor.Descriptor(
   name='Status',
   full_name='cleverest.Status',
@@ -156,8 +188,8 @@ _STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=78,
-  serialized_end=124,
+  serialized_start=122,
+  serialized_end=168,
 )
 
 
@@ -195,8 +227,8 @@ _CONNECTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=126,
-  serialized_end=201,
+  serialized_start=170,
+  serialized_end=245,
 )
 
 
@@ -241,8 +273,8 @@ _QUESTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=203,
-  serialized_end=280,
+  serialized_start=247,
+  serialized_end=324,
 )
 
 
@@ -262,7 +294,7 @@ _SENDUSERANSWERS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user', full_name='cleverest.SendUserAnswers.user', index=1,
+      name='user_token', full_name='cleverest.SendUserAnswers.user_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -280,8 +312,8 @@ _SENDUSERANSWERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=329,
+  serialized_start=326,
+  serialized_end=379,
 )
 
 
@@ -326,8 +358,8 @@ _USERRESULTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=331,
-  serialized_end=397,
+  serialized_start=381,
+  serialized_end=447,
 )
 
 
@@ -358,8 +390,8 @@ _LOADUSERRANKING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=399,
-  serialized_end=430,
+  serialized_start=449,
+  serialized_end=480,
 )
 
 
@@ -397,8 +429,8 @@ _RETURNUSERRANKING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=432,
-  serialized_end=488,
+  serialized_start=482,
+  serialized_end=538,
 )
 
 
@@ -444,8 +476,8 @@ _ACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=491,
-  serialized_end=688,
+  serialized_start=541,
+  serialized_end=738,
 )
 
 _CONNECTIONRESPONSE.fields_by_name['status'].message_type = _STATUS
@@ -453,6 +485,7 @@ _ACTION.fields_by_name['action_type'].enum_type = _ACTION_ACTIONTYPE
 _ACTION_ACTIONTYPE.containing_type = _ACTION
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['ConnectionRequest'] = _CONNECTIONREQUEST
+DESCRIPTOR.message_types_by_name['DisconnectionRequest'] = _DISCONNECTIONREQUEST
 DESCRIPTOR.message_types_by_name['Status'] = _STATUS
 DESCRIPTOR.message_types_by_name['ConnectionResponse'] = _CONNECTIONRESPONSE
 DESCRIPTOR.message_types_by_name['QuestionResponse'] = _QUESTIONRESPONSE
@@ -476,6 +509,13 @@ ConnectionRequest = _reflection.GeneratedProtocolMessageType('ConnectionRequest'
   # @@protoc_insertion_point(class_scope:cleverest.ConnectionRequest)
   })
 _sym_db.RegisterMessage(ConnectionRequest)
+
+DisconnectionRequest = _reflection.GeneratedProtocolMessageType('DisconnectionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DISCONNECTIONREQUEST,
+  '__module__' : 'cleverest_pb2'
+  # @@protoc_insertion_point(class_scope:cleverest.DisconnectionRequest)
+  })
+_sym_db.RegisterMessage(DisconnectionRequest)
 
 Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), {
   'DESCRIPTOR' : _STATUS,
@@ -542,8 +582,8 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=691,
-  serialized_end=1058,
+  serialized_start=741,
+  serialized_end=1176,
   methods=[
   _descriptor.MethodDescriptor(
     name='Connection',
@@ -556,9 +596,19 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='disconnect',
+    full_name='cleverest.Cleverest.disconnect',
+    index=1,
+    containing_service=None,
+    input_type=_DISCONNECTIONREQUEST,
+    output_type=_STATUS,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='AskQuestion',
     full_name='cleverest.Cleverest.AskQuestion',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_QUESTIONRESPONSE,
     output_type=_SENDUSERANSWERS,
@@ -568,7 +618,7 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CheckUserAnswer',
     full_name='cleverest.Cleverest.CheckUserAnswer',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_SENDUSERANSWERS,
     output_type=_USERRESULTS,
@@ -578,7 +628,7 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CheckUserRanking',
     full_name='cleverest.Cleverest.CheckUserRanking',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_LOADUSERRANKING,
     output_type=_RETURNUSERRANKING,
@@ -588,7 +638,7 @@ _CLEVEREST = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='get_game_stream',
     full_name='cleverest.Cleverest.get_game_stream',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_EMPTY,
     output_type=_ACTION,
