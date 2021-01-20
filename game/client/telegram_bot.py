@@ -1,7 +1,6 @@
-from flask import Flask, request
+from flask import Flask
 import telegram
-from client.credentials import bot_token, bot_user_name,URL
-
+from game.client.credentials import bot_token
 
 global bot
 global TOKEN

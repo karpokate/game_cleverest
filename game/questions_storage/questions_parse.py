@@ -10,7 +10,7 @@ def main():
 
     result_dict ={}
     url_from = 'https://baza-otvetov.ru/categories/view/1/{}'
-    driver = webdriver.Chrome(executable_path='/Users/kate/PycharmProjects/cleverest/questions_storage/chromedriver 2')
+    driver = webdriver.Chrome(executable_path='/game/questions_storage/chromedriver 2')
 
     for index in range(0,2501,10):
         driver.get(url_from.format(index))

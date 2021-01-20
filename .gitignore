@@ -1,2 +1,8 @@
-/venv/
-/client/credentials.py
+venv/
+
+/game/client/credentials.py
+/game/procedures
+
+
+/game/gamelog.db
+/game/gamedb/gamelog.db

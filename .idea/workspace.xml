@@ -2,13 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15a6dc1d-5364-4f3a-ac4b-32aea908a247" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/client/client_main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/client/server_connection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/gamedb/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/gamedb/gamedb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game/msg_listener/msg_listener.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/listener_start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/cleverest.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/cleverest.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/credentials.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/client/credentials.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/telegram_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/client/telegram_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procedures/ask_question.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/procedures/ask_question.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procedures/simple_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/procedures/simple_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/cleverest.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/proto/cleverest_pb2.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/proto/cleverest_pb2_grpc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions_storage/chromedriver 2" beforeDir="false" afterPath="$PROJECT_DIR$/game/questions_storage/chromedriver 2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions_storage/json_clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/questions_storage/json_clean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions_storage/questions_bank.json" beforeDir="false" afterPath="$PROJECT_DIR$/game/questions_storage/questions_bank.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions_storage/questions_parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/questions_storage/questions_parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/server/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +54,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/questions_storage" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/proto" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/questions_storage" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/game" />
+      <recent name="$PROJECT_DIR$/proto" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.questions_parse">
-    <configuration name="ask_question" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.gamedb">
+    <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cleverest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -54,11 +72,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/procedures" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/game/client" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/procedures/ask_question.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -67,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="json_clean" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="client_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cleverest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,11 +93,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/questions_storage" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/game/client" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/questions_storage/json_clean.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game/client/client_main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="questions_parse" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="gamedb" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cleverest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,11 +114,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/questions_storage" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/game/gamedb" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/questions_storage/questions_parse.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game/gamedb/gamedb.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="simple_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="listener_start" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cleverest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,11 +135,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/procedures" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/procedures/simple_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/listener_start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cleverest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -132,10 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.questions_parse" />
-        <item itemvalue="Python.json_clean" />
-        <item itemvalue="Python.simple_test" />
-        <item itemvalue="Python.ask_question" />
+        <item itemvalue="Python.client" />
+        <item itemvalue="Python.listener_start" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.gamedb" />
+        <item itemvalue="Python.client_main" />
       </list>
     </recent_temporary>
   </component>
@@ -165,53 +205,58 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="691" y="350" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609079762714">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="605" y="340" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611141895716">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="605" y="340" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1611141895716" />
     <state x="691" y="350" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1609079762714" />
-    <state width="1659" height="232" key="GridCell.Tab.0.bottom" timestamp="1609864966283">
-      <screen x="0" y="23" width="1680" height="935" />
+    <state width="1659" height="240" key="GridCell.Tab.0.bottom" timestamp="1611142556525">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="232" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1609346517184" />
+    <state width="1659" height="240" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611142556525" />
     <state width="1659" height="232" key="GridCell.Tab.0.bottom/0.23.1680.935@0.23.1680.935" timestamp="1609864966283" />
-    <state width="1659" height="232" key="GridCell.Tab.0.center" timestamp="1609864966273">
-      <screen x="0" y="23" width="1680" height="935" />
+    <state width="1659" height="240" key="GridCell.Tab.0.center" timestamp="1611142556524">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="232" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1609346517183" />
+    <state width="1659" height="240" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611142556524" />
     <state width="1659" height="232" key="GridCell.Tab.0.center/0.23.1680.935@0.23.1680.935" timestamp="1609864966273" />
-    <state width="1659" height="232" key="GridCell.Tab.0.left" timestamp="1609864966267">
-      <screen x="0" y="23" width="1680" height="935" />
+    <state width="1659" height="240" key="GridCell.Tab.0.left" timestamp="1611142556523">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="232" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1609346517182" />
+    <state width="1659" height="240" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611142556523" />
     <state width="1659" height="232" key="GridCell.Tab.0.left/0.23.1680.935@0.23.1680.935" timestamp="1609864966267" />
-    <state width="1659" height="232" key="GridCell.Tab.0.right" timestamp="1609864966280">
-      <screen x="0" y="23" width="1680" height="935" />
+    <state width="1659" height="240" key="GridCell.Tab.0.right" timestamp="1611142556525">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="232" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1609346517183" />
+    <state width="1659" height="240" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611142556525" />
     <state width="1659" height="232" key="GridCell.Tab.0.right/0.23.1680.935@0.23.1680.935" timestamp="1609864966280" />
-    <state width="1659" height="363" key="GridCell.Tab.1.bottom" timestamp="1609319863754">
+    <state width="1659" height="363" key="GridCell.Tab.1.bottom" timestamp="1611141766174">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1609319863754" />
-    <state width="1659" height="363" key="GridCell.Tab.1.center" timestamp="1609319863751">
+    <state width="1659" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1611141766174" />
+    <state width="1659" height="363" key="GridCell.Tab.1.center" timestamp="1611141766173">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1609319863751" />
-    <state width="1659" height="363" key="GridCell.Tab.1.left" timestamp="1609319863749">
+    <state width="1659" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1611141766173" />
+    <state width="1659" height="363" key="GridCell.Tab.1.left" timestamp="1611141766172">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1609319863749" />
-    <state width="1659" height="363" key="GridCell.Tab.1.right" timestamp="1609319863753">
+    <state width="1659" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1611141766172" />
+    <state width="1659" height="363" key="GridCell.Tab.1.right" timestamp="1611141766173">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1659" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1609319863753" />
-    <state x="517" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1610627523022">
+    <state width="1659" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1611141766173" />
+    <state x="459" y="243" key="RollbackChangesDialog" timestamp="1611104937980">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="517" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1610627523022" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1610977084451">
+    <state x="459" y="243" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1611104937980" />
+    <state x="517" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1611108090183">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610977084451" />
+    <state x="517" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1611108090183" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1611111838564">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1611111838564" />
   </component>
 </project>

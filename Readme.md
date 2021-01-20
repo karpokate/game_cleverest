@@ -15,7 +15,7 @@ proto \
 ``python -m grpc_tools.protoc --proto_path=. ./cleverest.proto --python_out=. --grpc_python_out=.`` \
 rabbit mq (message broker)  \
 message listener \
-database - postgressql  
+database - postgressql  c
 
 ## Третий этап: реализация клиентской части 
 Flask, telegram api.
