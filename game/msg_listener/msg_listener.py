@@ -21,7 +21,7 @@ class MSGListener():
             on_message_callback=self.callback,
             auto_ack=True)
 
-        # self.db = GameDB()
+        self.db = GameDB()
 
     def callback(self, ch, method, properties, body):
         body = json.loads(body)

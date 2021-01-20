@@ -10,16 +10,20 @@ import pika
 import json
 from  datetime import datetime
 
+from ..procedures.ask_question import form_question_list
+# from ..questions_storage import q
+
+# TODO in v1.1:
+# 1) Questions from file read
+# 2) disconnect for client release
+
 
 class GameServicer (game_pb2_grpc.GameServicer):
-    def __init__(self):
 
-        self.questions = [
-            {'question':'How much planets?', 'answer':['9','2','39','8'], 'correct_answer':0},
-            {'question':'How much 2+3?', 'answer':['3','10','4','5'], 'correct_answer':3},
-            {'question':'How we can translate love to German?','answer':['Kiss','Deutsch','Liebe','Love'], 'correct_answer':2},
-            {'question': 'END_SIGNAL', 'answer': [], 'correct_answer': 0}
-        ]
+
+    def __init__(self):
+        self.question_bank_path = '/Users/kate/PycharmProjects/cleverest/game/questions_storage/questions_bank.json'
+        self.questions = form_question_list(game_pull_size = 10,path = self.question_bank_path)
 
         self.users = {}
         self.current_question = 0
@@ -30,6 +34,9 @@ class GameServicer (game_pb2_grpc.GameServicer):
             pika.ConnectionParameters(host='localhost'))
         self.rabbit_channel = self.rabbit_connection.channel()
         self.rabbit_channel.queue_declare(queue=self.queue_name)
+
+
+
 
     # method: add action to rabbitmq => to db
     def add_to_rabbit_action(self, username,action_string,payload=''):
@@ -164,4 +171,5 @@ def server():
 
 
 if __name__ == '__main__':
+    # GameServicer().get_question_from_storage()
     server()

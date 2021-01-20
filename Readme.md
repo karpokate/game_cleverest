@@ -31,4 +31,7 @@ Telegram Bot - ведущий игры, задает вопросы в чате 
 ``python -m venv venv 
 source venv\bin\activate`` \
 установка библиотек: \
-```pip install -r requirments.txt```
+```pip install -r requirments.txt``` \
+rabbitMQ in docker container: \
+``` docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management```
+
